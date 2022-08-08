@@ -113,7 +113,7 @@ namespace CryptoChinese
                 //----
                 return key;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 L("密钥生成错误.", LogType.Error);
                 L("错误信息:\r\n" + ex.ToString(), LogType.Error);
@@ -180,7 +180,7 @@ namespace CryptoChinese
                 }
                 File.WriteAllText(Enfilepath, string.Join(string.Empty, resultList), Encoding.GetEncoding(key.CharSet));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 L("加密错误.", LogType.Error);
                 L("错误信息:\r\n" + ex.ToString(), LogType.Error);
@@ -246,13 +246,12 @@ namespace CryptoChinese
                 }
                 File.WriteAllBytes(Defilepath, decompressedData);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 L("加密错误.", LogType.Error);
                 L("错误信息:\r\n" + ex.ToString(), LogType.Error);
                 Exit(Exceptions.UncaughtException);
             }
-             
         }
 
         /// <summary>
@@ -307,7 +306,7 @@ namespace CryptoChinese
             {
                 var newChar = chars[rndint];
                 var failedCount = 0;
-                reTrynewCahr:
+            reTrynewCahr:
 
                 if (!charsArray.Contains(newChar))
                 {
@@ -315,7 +314,6 @@ namespace CryptoChinese
                 }
                 else
                 {
-
                     failedCount++;
                     if (failedCount >= 1024)
                     {
@@ -412,25 +410,32 @@ namespace CryptoChinese
                 case LogType.Information:
                     Console.WriteLine("[*] " + text);
                     break;
+
                 case LogType.Warning:
                     Console.WriteLine("[!] " + text);
                     break;
+
                 case LogType.Error:
                     Console.WriteLine("[-] " + text);
                     break;
+
                 case LogType.Success:
                     Console.WriteLine("[+] " + text);
                     break;
+
                 case LogType.Failed:
                     Console.WriteLine("[x] " + text);
                     break;
+
                 case LogType.Normal:
                     Console.WriteLine(text);
                     break;
+
                 default:
                     break;
             }
         }
+
         #region 扩展方法
 
         /// <summary>
@@ -444,13 +449,14 @@ namespace CryptoChinese
         {
             return ListB.All(b => ListA.Any(a => Equals(a, b)));
         }
+
         /// <summary>
         /// 判断列表count是否和指定长度相等
         /// </summary>
-        /// <typeparam name="T">泛型</typeparam>
-        /// <param name="list">列表</param>
-        /// <param name="count">要判断的数量</param>
-        /// <returns>是否相等</returns>
+        /// <typeparam name="T"> 泛型 </typeparam>
+        /// <param name="list"> 列表 </param>
+        /// <param name="count"> 要判断的数量 </param>
+        /// <returns> 是否相等 </returns>
         public static bool LengthCheck<T>(this List<T> list, int count)
         {
             return list.Count == count;
@@ -510,6 +516,7 @@ namespace CryptoChinese
             Success,
             Failed
         }
+
         #endregion 枚举
     }
 
