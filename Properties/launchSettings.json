@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CryptoChinese": {
+      "commandName": "Project",
+      "commandLineArgs": "dec \"key.txt\" \"enc.txt\" \"enc.decrypt.png\" utf-8"
+    }
+  }
+}
