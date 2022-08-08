@@ -248,7 +248,7 @@ namespace CryptoChinese
             }
             catch (Exception ex)
             {
-                L("加密错误.", LogType.Error);
+                L("解密错误.", LogType.Error);
                 L("错误信息:\r\n" + ex.ToString(), LogType.Error);
                 Exit(Exceptions.UncaughtException);
             }
